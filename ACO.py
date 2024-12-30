@@ -61,11 +61,11 @@ def min_max(ant_z):
     for i in range(AntCount):
         ant_z[i]=(ant_z_min[i]-np.min(ant_z_min))/10000
     return ant_z
-AntCount = 40
+AntCount = 50
 city_count = len(city_name)
 # 信息素
 alpha = 1
-beta = 1
+beta = 5
 rho = 0.9
 iter = 0
 MAX_iter = 300
@@ -132,7 +132,7 @@ for iter in tqdm(range(MAX_iter)):
             candidate[i, j] = k
             unvisit.remove(k)
             length[i] += Distance[visit][k]
-            visit = k  # 更改出发点，继续选择下一个到达点
+            visit = k 
         length[i] += Distance[visit][candidate[i, 0]]
     if iter == 0:
         distance_best[iter] = length.min()
