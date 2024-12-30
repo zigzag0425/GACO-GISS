@@ -21,8 +21,7 @@ M=20
 max_inter=1000
 pc = 0.65
 pm = 0.2
-route_2=np.load("path_only-51.npy")
-route_2=np.append(route_2,0,axis=None)
+route_2=np.load("route_2opt.npy")
 route_2=route_2.tolist()
 for i in range(city_number+1):
     route_2[i]=int(route_2[i])
@@ -190,6 +189,5 @@ if __name__ == '__main__':
            if fitness_new[j]>=fitness[j] :
                pop[j]=pop_mutate[j]
    x=np.array(x)
-   np.save('../iter/51ucoLK.npy',x)
 
 
